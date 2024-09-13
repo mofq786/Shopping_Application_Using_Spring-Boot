@@ -26,6 +26,14 @@ public class CustomerController {
 	
 	@Autowired
 	CustomerService customerService;
+	
+	@GetMapping("/")
+	public String home()
+	{
+		return "Home";
+	}
+	
+	
 	@GetMapping("/registrationpage")
 	public String customerRegistrationPage(Model model) {
 		CustomerDetails customerDetails = new CustomerDetails();

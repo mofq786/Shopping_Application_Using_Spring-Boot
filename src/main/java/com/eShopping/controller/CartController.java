@@ -52,14 +52,22 @@ public class CartController {
 	@RequestMapping("/get-all-cart")
 	public String getAllProducts(HttpServletRequest request, Model model)
 	{
-		int custId = (Integer) request.getSession().getAttribute("custId");
-		List<Cart> cartList = cartService.getAllCart(custId);
-		if(cartList.size() != 0)
+		
+		try {
+			int custId = (Integer) request.getSession().getAttribute("custId");
+			List<Cart> cartList = cartService.getAllCart(custId);
+			if(cartList.size() != 0)
+			{
+				model.addAttribute("cartList", cartList);
+				return "CartDetails";
+			}
+			
+			return "EmptyCart";
+		}
+		catch(NullPointerException e)
 		{
-			model.addAttribute("cartList", cartList);
-			return "CartDetails";
+			return "redirect:/loginpage";
 		}
 		
-		return "EmptyCart";
 	}
 }

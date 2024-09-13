@@ -25,13 +25,19 @@ public class OrdersController {
 
     @RequestMapping("/myorders")
     public String showOrders(HttpServletRequest request, Model model) {
-        List<Orders> ordersList = ordersService.getOrdersList((Integer) request.getSession().getAttribute("custId"));
+        try {
+    	List<Orders> ordersList = ordersService.getOrdersList((Integer) request.getSession().getAttribute("custId"));
+        
         if(ordersList.size() == 0)
         {
             return "OrdersNotFound";
         }
         model.addAttribute("ordersList", ordersList);
         return "MyOrders";
+        }
+        catch (Exception e) {
+			return "redirect:/loginpage";
+		}
     }
     
     @RequestMapping("/place-order")
