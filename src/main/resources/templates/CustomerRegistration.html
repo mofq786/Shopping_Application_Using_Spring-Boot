@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<form action="customerregistrationdetails" th:object="${customerobject}">
+<input placeholder="Enter Your First Name" th:field ="*{firstname}">
+<br>
+<input placeholder="Enter Your Last Name" th:field="*{lastname}">
+<br>
+<input placeholder="Enter Your Email id" th:field="*{emailid}">
+<br>
+<input placeholder="Enter Your Password" th:field="*{password}">
+<br>
+<input placeholder="Enter Your Mobile Number" th:field="*{mobilenumber}">
+<br>
+<input placeholder="Enter Your Address" th:field="*{address}">
+<br>
+<input placeholder="Enter Your Gender" th:field="*{gender}">
+<br>
+<input type="submit">
+</form>
+</center>
+</body>
+</html>

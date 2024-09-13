@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<h1>Cart Details</h1>
+<center>
+<table border="1">
+<tr>
+<th>Product ID</th>
+<th>Product Quantity</th>
+<th>Total Amount</th>
+<th>Action</th>
+</tr>
+<tr th:each="cart:${cartList}">
+<td th:text="${cart.productid}"></td>
+<td th:text="${cart.productquantity}"></td>
+<td th:text="${cart.totalamount}"></td>
+<td>
+<form th:action="delete-from-cart">
+<input th:value="${cart.cartid}" hidden="true" name="cartid">
+<br>
+<input type="submit" value="Delete">
+</form>
+</td>
+</tr>
+</table>
+
+<form th:action="place-order">
+<input type="submit" value="Place Order">
+</form>
+
+</center>
+
+
+
+
+
+
+</center>
+</body>
+</html>

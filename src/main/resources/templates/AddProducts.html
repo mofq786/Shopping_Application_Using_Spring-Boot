@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" th:src="@{/js/AddProduct.js}"></script>
+</head>
+<body>
+<center><h1>Add Product Details</h1>
+
+<form action="productdetails">
+
+<label>CATEGORYS</label>
+<select id="category" name="category" onchange="updateOptions()">
+<option>SELECT</option>
+<option value="Mobile">MOBILE</option>
+<option value="MEN">MEN </option>
+<option value="WOMEN">WOMEN</option>
+<option value="Electronics">Electronics</option>
+</select>
+<br>
+
+<label>Brand</label>
+<select id="option" name="brand">
+
+<option>SELECT</option>
+<option value=""></option>
+</select>
+<br>
+<br>
+<input placeholder="Enter Product Name" name="productname">
+<br>
+<input placeholder="Enter Product Price" name="price">
+<br>
+<input placeholder="Enter Product Quantity" name="quantity">
+<br>
+<label>Exp-Date</label>
+<input type="date" name="exdate">
+<br>
+<label>MF-Date</label>
+<br>
+<input type="date" name="mfdate">
+<br>
+<input type="submit">
+</form>
+</center>
+</body>
+</html>

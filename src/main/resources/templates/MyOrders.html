@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Orders</title>
+</head>
+<body>
+<center>
+<table border="1">
+    <tr>
+        <th>Order Bill</th>
+        <th>Order ID</th>
+        <th>Product ID</th>
+        <th>Status</th>
+        <th>Address</th>
+    </tr>
+    <tr th:each="order:${ordersList}">
+        <td th:text="${order.bill}"></td>
+        <td th:text="${order.orderid}"></td>
+        <td th:text="${order.productid}"></td>
+        <td th:text="${order.status}"></td>
+        <td th:text="${order.address}"></td>
+    </tr>
+</table>
+</center>
+</body>
+</html>
