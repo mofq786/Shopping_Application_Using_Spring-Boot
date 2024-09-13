@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shopping Application</title>
+
+<style>
+th{
+text-align: left;
+padding: 10px;
+}
+h1{
+	font-size: 50px;
+}
+
+input{
+	font-size: 25px;
+	width: 300px;
+	height: 50px;
+	border-radius: 10px;
+	border: none;
+	color: white;
+	background-color: royalblue;
+}
+</style>
+
+</head>
+<body style="background-color: purple; color: white;">
+<center>
+
+<h1>Welcome to Shopping Application</h1>
+<br>
+<br>
+
+<table>
+<tr>
+<th>
+<form th:action="searchproducts">
+<input type="submit" value="Products Page">
+</form>
+</th>
+
+<th>
+<form th:action="get-all-cart">
+<input type="submit" value="My Cart">
+</form>
+</th>
+</tr>
+
+<tr>
+<th>
+<form th:action="myorders">
+<input type="submit" value="My Orders">
+</form>
+</th>
+
+<th>
+<form action="adminloginpage">
+<input type="submit" value="Admin Login">
+</form>
+</th>
+</tr>
+
+
+<tr>
+<th>
+<form th:action="registrationpage">
+<input type="submit" value="Customer Registration">
+</form>
+</th>
+
+<th>
+<form action="loginpage">
+<input type="submit" value="Customer Login">
+</form>
+</th>
+</tr>
+
+</table>
+
+
+</center>
+
+
+
+</body>
+</html>
